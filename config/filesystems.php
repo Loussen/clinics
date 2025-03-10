@@ -60,6 +60,13 @@ return [
             'report' => false,
         ],
 
+        'hospitals_gallery' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/uploads/images/hospitals/gallery'),
+            'url' => env('APP_URL').'/storage/uploads/images/hospitals/gallery',
+            'visibility' => 'public',
+        ],
+
     ],
 
     /*
