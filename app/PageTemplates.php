@@ -68,4 +68,22 @@ trait PageTemplates
             'placeholder' => trans('backpack::pagemanager.content_placeholder'),
         ]);
     }
+
+    private function about_us()
+    {
+        $this->crud->addField([
+            'name' => 'content',
+            'label' => trans('backpack::pagemanager.content'),
+            'type' => 'tinymce',
+            'placeholder' => trans('backpack::pagemanager.content_placeholder'),
+        ]);
+
+        $this->crud->addField([
+            'name' => 'image',
+            'type' => 'image',
+            'upload' => true,
+            'crop' => true,
+            'wrapper' => ['class' => 'form-group col-md-6'],
+        ]);
+    }
 }

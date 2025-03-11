@@ -3,19 +3,17 @@
 namespace App\Models;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
-use Cviebrock\EloquentSluggable\Sluggable;
-use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
+use Backpack\CRUD\app\Models\Traits\SpatieTranslatable\HasTranslations;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use Backpack\CRUD\app\Models\Traits\SpatieTranslatable\HasTranslations;
 use Intervention\Image\ImageManagerStatic as Image;
 
-class Page extends Model
+class Sliders extends Model
 {
     use CrudTrait;
-    use Sluggable;
-    use SluggableScopeHelpers;
+    use HasFactory;
     use HasTranslations;
 
     /*
@@ -24,57 +22,23 @@ class Page extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'pages';
-    protected $primaryKey = 'id';
-    public $timestamps = true;
-    // protected $guarded = ['id'];
-    protected $fillable = ['template', 'name', 'title', 'slug', 'content', 'image'];
+    protected $table = 'sliders';
+    // protected $primaryKey = 'id';
+    // public $timestamps = false;
+    protected $guarded = ['id'];
+    // protected $fillable = [];
     // protected $hidden = [];
-    // protected $dates = [];
-//    protected $casts = [
-//        'extras' => 'array',
-//    ];
-
-    public $translatable = ['title', 'content'];
 
     private string $image = 'image';
     private string $disk = 'public';
 
-    /**
-     * Return the sluggable configuration array for this model.
-     *
-     * @return array
-     */
-    public function sluggable(): array
-    {
-        return [
-            'slug' => [
-                'source' => 'slug_or_title',
-            ],
-        ];
-    }
+    public $translatable = ['title','description','url'];
 
     /*
     |--------------------------------------------------------------------------
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
-
-    public function getTemplateName()
-    {
-        return str_replace('_', ' ', Str::title($this->template));
-    }
-
-    public function getPageLink()
-    {
-        return url($this->slug);
-    }
-
-    public function getOpenButton()
-    {
-        return '<a class="btn btn-sm btn-link" href="'.$this->getPageLink().'" target="_blank">'.
-            '<i class="la la-eye"></i> '.trans('backpack::pagemanager.open').'</a>';
-    }
 
     /*
     |--------------------------------------------------------------------------
@@ -90,32 +54,23 @@ class Page extends Model
 
     /*
     |--------------------------------------------------------------------------
-    | ACCESORS
+    | ACCESSORS
     |--------------------------------------------------------------------------
     */
-
-    // The slug is created automatically from the "name" field if no slug exists.
-    public function getSlugOrTitleAttribute()
-    {
-        if ($this->slug != '') {
-            return $this->slug;
-        }
-
-        return $this->title;
-    }
 
     /*
     |--------------------------------------------------------------------------
     | MUTATORS
     |--------------------------------------------------------------------------
     */
+
     public function setImageAttribute($value): void
     {
         $attribute_name = $this->image;
         // or use your own disk, defined in config/filesystems.php
         $disk = $this->disk;
         // destination path relative to the disk above
-        $destination_path = "uploads/images/page/images";
+        $destination_path = "uploads/images/sliders/images";
 
         // if the image was erased
         if (empty($value)) {

@@ -11,3 +11,8 @@
 <x-backpack::menu-item title="Settings" icon="la la-cogs" :link="backpack_url('settings/1/edit')" />
 
 <x-backpack::menu-item title="Translation Manager" icon="la la-stream" :link="backpack_url('translation-manager')" />
+
+<x-backpack::menu-item title="Sliders" icon="la la-question" :link="backpack_url('sliders')" />
+<x-backpack::menu-item title="Features" icon="la la-question" :link="backpack_url('features/1/edit')" />
+
+<x-backpack::menu-item title="Departments" icon="la la-question" :link="backpack_url('departments')" />

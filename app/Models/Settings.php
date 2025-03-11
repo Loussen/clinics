@@ -28,9 +28,10 @@ class Settings extends Model
 
     protected $casts = [
         'social_profiles' => 'array',
+        'site_services' => 'array',
     ];
 
-    public $translatable = ['address'];
+    public $translatable = ['address','site_services'];
 
     /*
     |--------------------------------------------------------------------------

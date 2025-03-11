@@ -24,6 +24,9 @@ Route::group([
     Route::crud('testimonials', 'TestimonialsCrudController');
     Route::crud('settings', 'SettingsCrudController');
     Route::crud('menu-item', 'MenuItemCrudController');
+    Route::crud('sliders', 'SlidersCrudController');
+    Route::crud('features', 'FeaturesCrudController');
+    Route::crud('departments', 'DepartmentsCrudController');
 }); // this should be the absolute last line of this file
 
 /**

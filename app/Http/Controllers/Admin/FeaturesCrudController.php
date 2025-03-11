@@ -2,25 +2,22 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\SettingsRequest;
+use App\Http\Requests\FeaturesRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
-use Backpack\Pro\Http\Controllers\Operations\DropzoneOperation;
 
 /**
- * Class SettingsCrudController
+ * Class FeaturesCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class SettingsCrudController extends CrudController
+class FeaturesCrudController extends CrudController
 {
-//    use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
-//    use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
-//    use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
-//    use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
-
-    use DropzoneOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
@@ -29,9 +26,9 @@ class SettingsCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Settings::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/settings');
-        CRUD::setEntityNameStrings('settings', 'settings');
+        CRUD::setModel(\App\Models\Features::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/features');
+        CRUD::setEntityNameStrings('features', 'features');
     }
 
     /**
@@ -58,51 +55,30 @@ class SettingsCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(SettingsRequest::class);
-        CRUD::field('address')->type('textarea');
-        CRUD::field('phone')->wrapper(['class' => 'form-group col-md-6']);
-        CRUD::field('email')->wrapper(['class' => 'form-group col-md-6']);
-        CRUD::field('map')->type('textarea');
-        $subfieldsSocialProfileInfo[] = [
-            'name'        => 'social_network',
-            'type'        => 'select2_from_array',
-            'options'     => ['facebook' => 'Facebook', 'instagram' => 'Instagram', 'youtube' => 'YouTube'],
-            'allows_null' => false,
-            'default'     => 'one',
-            'wrapper'     => [
-                'class' => 'form-group col-md-4'
-            ],
-        ];
-        $subfieldsSocialProfileInfo[] = [
-            'name'        => 'link',
-            'type'        => 'url',
-            'wrapper'     => [
-                'class' => 'form-group col-md-8'
-            ],
-        ];
+        CRUD::setValidation(FeaturesRequest::class);
+        CRUD::field('title');
+        CRUD::field('description')->type('textarea');
         CRUD::addField([
-            'name'          => 'social_profiles',
-            'type'          => "repeatable",
-            'subfields'     => $subfieldsSocialProfileInfo,
-            'max_rows'      => 10,
-            'min_rows'      => 1,
-            'init_rows'     => 1,
+            'name' => 'image',
+            'type' => 'image',
+            'upload' => true,
+            'crop' => true,
+            'wrapper' => ['class' => 'form-group col-md-6'],
         ]);
-
-        $subfieldsSiteServices[] = [
+        $subfieldsFeatures[] = [
             'name'        => 'title',
             'wrapper'     => [
                 'class' => 'form-group col-md-4'
             ],
         ];
-        $subfieldsSiteServices[] = [
+        $subfieldsFeatures[] = [
             'name'        => 'description',
             'type'        => 'textarea',
             'wrapper'     => [
                 'class' => 'form-group col-md-4'
             ],
         ];
-        $subfieldsSiteServices[] = [
+        $subfieldsFeatures[] = [
             'name'        => 'icon',
             'type'        => 'icon_picker',
             'iconset'     => 'fontawesome',
@@ -111,18 +87,12 @@ class SettingsCrudController extends CrudController
             ],
         ];
         CRUD::addField([
-            'name'          => 'site_services',
+            'name'          => 'features',
             'type'          => "repeatable",
-            'subfields'     => $subfieldsSiteServices,
+            'subfields'     => $subfieldsFeatures,
             'max_rows'      => 4,
             'min_rows'      => 1,
             'init_rows'     => 1,
-        ]);
-        CRUD::addField([
-            'name' => 'gallery',
-            'type' => 'dropzone',
-            'disk' => 'site_gallery',
-            'withFiles'    => true,
         ]);
 
         /**

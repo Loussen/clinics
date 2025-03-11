@@ -15,7 +15,7 @@
     @include('includes.testimonials')
     @include('includes.doctors')
     @include('includes.gallery')
-    @include('includes.pricing')
+{{--    @include('includes.pricing')--}}
     @include('includes.faq')
     @include('includes.contact')
 @endsection
