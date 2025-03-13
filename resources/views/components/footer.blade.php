@@ -7,60 +7,62 @@
             <span class="sitename">Medicio</span>
           </a>
           <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
+            <p>{{ $siteSettings->address }}</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>{{ $siteSettings->phone }}</span></p>
+            <p><strong>Email:</strong> <span>{{ $siteSettings->email }}m</span></p>
           </div>
           <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+
+              @foreach($siteSettings->social_profiles as $socialProfile)
+                  <a href="{{ $socialProfile['link'] }}" target="_blank"><i class="bi bi-{{ $socialProfile['social_network'] }}"></i></a>
+              @endforeach
           </div>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
+              @foreach (\App\Models\MenuItem::getTree() as $item)
+                  <li>
+                      @php
+                          if($item->type == 'internal_link') {
+                              $link = route($item->link, ['locale' => \Illuminate\Support\Facades\App::getLocale()]);
+                          } elseif($item->type == 'page_link') {
+                              $link = route('page',['slug' => $item->page->slug, 'locale' => \Illuminate\Support\Facades\App::getLocale()]);
+                          } else {
+                              $link = $item->link;
+                          }
+                      @endphp
+                      <a href="{{ $link }}">{{ $item->name }}</a>
+                  </li>
+              @endforeach
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Our Services</h4>
           <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
+              @foreach(\App\Models\Services::all() as $service)
+                  <li><a href="{{ route('service',['id' => $service->id,'locale' => \Illuminate\Support\Facades\App::getLocale()]) }}">{{ $service->name }}</a></li>
+              @endforeach
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Hic solutasetp</h4>
+          <h4>Hospitals</h4>
           <ul>
-            <li><a href="#">Molestiae accusamus iure</a></li>
-            <li><a href="#">Excepturi dignissimos</a></li>
-            <li><a href="#">Suscipit distinctio</a></li>
-            <li><a href="#">Dilecta</a></li>
-            <li><a href="#">Sit quas consectetur</a></li>
+              @foreach(\App\Models\Hospitals::all() as $hospital)
+                  <li><a href="{{ route('hospital',['id' => $hospital->id,'locale' => \Illuminate\Support\Facades\App::getLocale()]) }}">{{ $hospital->name }}</a></li>
+              @endforeach
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Nobis illum</h4>
+          <h4>Departments</h4>
           <ul>
-            <li><a href="#">Ipsam</a></li>
-            <li><a href="#">Laudantium dolorum</a></li>
-            <li><a href="#">Dinera</a></li>
-            <li><a href="#">Trodelas</a></li>
-            <li><a href="#">Flexo</a></li>
+              @foreach(\App\Models\Departments::all() as $department)
+                  <li><a href="{{ route('department',['id' => $department->id,'locale' => \Illuminate\Support\Facades\App::getLocale()]) }}">{{ $department->name }}</a></li>
+              @endforeach
           </ul>
         </div>
 

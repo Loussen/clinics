@@ -41,6 +41,9 @@
                 }
             </script>
             <div class="swiper-wrapper align-items-center">
+                @php
+                    $gallery = json_decode($siteSettings->gallery,true);
+                @endphp
                 @foreach($gallery as $galleryItem)
                     <div class="swiper-slide">
                         <a class="glightbox" data-gallery="images-gallery" href="{{ Storage::disk('site_gallery')->url($galleryItem) }}">

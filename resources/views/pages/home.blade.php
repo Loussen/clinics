@@ -8,6 +8,7 @@
     @include('includes.call-to-action')
     @include('includes.about')
     @include('includes.stats')
+    @include('includes.hospitals')
     @include('includes.features')
     @include('includes.services')
     @include('includes.appointment')

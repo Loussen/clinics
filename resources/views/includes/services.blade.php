@@ -15,7 +15,7 @@
                         </div>
                         <h3>{{ $service->name }}</h3>
                         <p>{{ $service->short_description }}</p>
-                        <a href="#" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
+                        <a href="{{ route('service', ['id' => $service->id, 'locale' => \Illuminate\Support\Facades\App::getLocale()]) }}" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
             @endforeach

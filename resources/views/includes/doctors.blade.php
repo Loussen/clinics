@@ -12,7 +12,7 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                     <div class="team-member">
                         <div class="member-img">
-                            <img src="{{ asset($doctor->image) }}" class="img-fluid" alt="">
+                            <img src="{{ asset($doctor->image) }}" class="img-fluid" alt="{{ $doctor->full_name }}">
                             <div class="social">
                                 @foreach($doctor->social_profiles as $socialProfile)
                                     <a href="{{ $socialProfile['link'] }}"><i class="bi bi-{{ $socialProfile['social_network'] }}"></i></a>
@@ -21,7 +21,8 @@
                         </div>
                         <div class="member-info">
                             <h4>{{ $doctor->full_name }}</h4>
-                            <span>{{ $doctor->speciality }}</span>
+                            <span class="mb-3">{{ $doctor->speciality }}</span>
+                            <a href="{{ route('doctor', ['id' => $doctor->id, 'locale' => \Illuminate\Support\Facades\App::getLocale()]) }}" class="readmore">Learn more <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

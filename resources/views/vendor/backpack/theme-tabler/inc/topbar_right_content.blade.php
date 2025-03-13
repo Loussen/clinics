@@ -1,1 +1,1 @@
-@include('backpack.language-switcher::language-switcher')
+{{--@include('backpack.language-switcher::language-switcher')--}}

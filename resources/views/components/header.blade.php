@@ -20,31 +20,41 @@
 
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="#hero" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#departments">Departments</a></li>
-                    <li><a href="#doctors">Doctors</a></li>
-                    <li class="dropdown">
-                        <a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                        <ul>
-                            <li><a href="#">Dropdown 1</a></li>
-                            <li class="dropdown">
-                                <a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                                <ul>
-                                    <li><a href="#">Deep Dropdown 1</a></li>
-                                    <li><a href="#">Deep Dropdown 2</a></li>
-                                    <li><a href="#">Deep Dropdown 3</a></li>
-                                    <li><a href="#">Deep Dropdown 4</a></li>
-                                    <li><a href="#">Deep Dropdown 5</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Dropdown 2</a></li>
-                            <li><a href="#">Dropdown 3</a></li>
-                            <li><a href="#">Dropdown 4</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#contact">Contact</a></li>
+                    @foreach (\App\Models\MenuItem::getTree() as $item)
+                        <li>
+                            @php
+                                if($item->type == 'internal_link') {
+                                    $link = route($item->link, ['locale' => \Illuminate\Support\Facades\App::getLocale()]);
+                                } elseif($item->type == 'page_link') {
+                                    $link = route('page',['slug' => $item->page->slug, 'locale' => \Illuminate\Support\Facades\App::getLocale()]);
+                                } else {
+                                    $link = $item->link;
+                                }
+                            @endphp
+                            <a href="{{ $link }}">{{ $item->name }}</a>
+                        </li>
+                    @endforeach
+                        <li class="dropdown ms-3">
+                            <a href="javascript:void(0);"><span>{{ app()->getLocale() }}</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                @foreach(config('data.locales') as $locale => $language)
+                                    <li>
+                                        @php
+                                            $params = ['locale' => $locale];
+
+                                            // Əgər route `page`-dirsə, `slug`-u əlavə edirik
+                                            if (\Illuminate\Support\Facades\Route::currentRouteName() === 'page') {
+                                                $params['slug'] = request()->route('slug');
+                                            } else {
+                                                $params['id'] = request()->route('id');
+                                            }
+                                        @endphp
+                                        <a href="{{ route(Route::currentRouteName(), $params) }}">{{ $language }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </li>
+
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
@@ -52,4 +62,4 @@
             <a class="cta-btn" href="#appointment">Make an Appointment</a>
         </div>
     </div>
-</header> 
+</header>
