@@ -68,8 +68,8 @@
 
                             <div class="col-md-12 text-center">
                                 <div class="loading">Loading</div>
-                                <div class="error-message d-none"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                                <div class="alert alert-danger error-message d-none"></div>
+                                <div class="alert alert-success sent-message">Your message has been sent. Thank you!</div>
 
                                 <button type="submit">Send Message</button>
                             </div>
