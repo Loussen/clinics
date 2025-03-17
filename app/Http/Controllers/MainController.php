@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContactRequests;
 use App\Models\Departments;
 use App\Models\Doctors;
 use App\Models\Faqs;
@@ -15,6 +16,7 @@ use App\Models\Testimonials;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\View\View;
 
 class MainController extends Controller
@@ -126,5 +128,49 @@ class MainController extends Controller
         $otherDoctors = Doctors::where('id','!=',$id)->get();
 
         return view('pages.doctor', compact('doctor','otherDoctors'));
+    }
+
+    public function contact()
+    {
+        return view('pages.contact');
+    }
+
+    public function contactForm(Request $request)
+    {
+        // Validate form data
+        $validator = Validator::make($request->all(), [
+            'full_name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'subject' => 'required|string|max:255',
+            'message' => 'required|string',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Validation failed',
+                'errors' => $validator->errors()
+            ], 422);
+        }
+
+        try {
+            // Insert data into ContactRequest model
+            ContactRequests::create([
+                'full_name' => $request->full_name,
+                'email' => $request->email,
+                'subject' => $request->subject,
+                'message' => $request->message
+            ]);
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Your message has been sent successfully!'
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'An error occurred while sending your message.'
+            ], 500);
+        }
     }
 }

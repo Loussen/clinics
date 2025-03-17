@@ -76,6 +76,7 @@ class HospitalsCrudController extends CrudController
             'upload' => true,
             'crop' => true,
             'wrapper' => ['class' => 'form-group col-md-6'],
+            'hint' => '400x400'
         ]);
         CRUD::addField([
             'name' => 'gallery',

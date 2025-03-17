@@ -86,6 +86,7 @@ class DoctorsCrudController extends CrudController
             'upload' => true,
             'crop' => true,
             'wrapper' => ['class' => 'form-group col-md-6'],
+            'hint' => '300x300'
         ]);
         $subfieldsSocialProfileInfo[] = [
             'name'        => 'social_network',

@@ -70,6 +70,7 @@ class DepartmentsCrudController extends CrudController
             'upload' => true,
             'crop' => true,
             'wrapper' => ['class' => 'form-group col-md-6'],
+            'hint' => '300x260'
         ]);
         CRUD::field('description')->type('tinymce');
 

@@ -22,7 +22,7 @@ function getRegistrar(): void
         Route::get('/services', 'services')->name('services');
         Route::get('/departments', 'departments')->name('departments');
         Route::get('/doctors', 'doctors')->name('doctors');
-        Route::get('/contact', 'dashboard')->name('contact');
+        Route::get('/contact', 'contact')->name('contact');
 
         Route::get('/hospital/{id}', 'hospital')->name('hospital');
         Route::get('/service/{id}', 'service')->name('service');
@@ -40,3 +40,5 @@ Route::group([
 ], function () {
     getRegistrar();
 });
+
+Route::post('/contactForm', [MainController::class,'contactForm'])->name('contactForm');

@@ -11,13 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('settings', function (Blueprint $table) {
-            $table->id();
-            $table->string('address')->nullable();
-            $table->string('phone')->nullable();
-            $table->string('email')->nullable();
-            $table->text('map')->nullable();
-            $table->timestamps();
+        Schema::table('settings', function (Blueprint $table) {
+            $table->string('work_hours')->nullable();
         });
     }
 
@@ -26,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('settings');
+        Schema::table('settings', function (Blueprint $table) {
+            $table->dropColumn('work_hours');
+        });
     }
 };

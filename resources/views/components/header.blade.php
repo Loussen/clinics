@@ -2,17 +2,17 @@
     <div class="topbar d-flex align-items-center">
         <div class="container d-flex justify-content-center justify-content-md-between">
             <div class="d-none d-md-flex align-items-center">
-                <i class="bi bi-clock me-1"></i> Monday - Saturday, 8AM to 10PM
+                <i class="bi bi-clock me-1"></i> {{ $siteSettings->work_hours }}
             </div>
             <div class="d-flex align-items-center">
-                <i class="bi bi-phone me-1"></i> Call us now +1 5589 55488 55
+                <i class="bi bi-phone me-1"></i> Call us now {{ $siteSettings->phone }}
             </div>
         </div>
     </div>
 
     <div class="branding d-flex align-items-center">
         <div class="container position-relative d-flex align-items-center justify-content-end">
-            <a href="{{ url('/') }}" class="logo d-flex align-items-center me-auto">
+            <a href="{{ route('home',['locale' => \Illuminate\Support\Facades\App::getLocale()]) }}" class="logo d-flex align-items-center me-auto">
                 <img src="{{ asset('assets/img/logo.png') }}" alt="">
                 <!-- Uncomment the line below if you also wish to use a text logo -->
                 <!-- <h1 class="sitename">Medicio</h1>  -->

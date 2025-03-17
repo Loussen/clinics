@@ -123,7 +123,10 @@ class SettingsCrudController extends CrudController
             'type' => 'dropzone',
             'disk' => 'site_gallery',
             'withFiles'    => true,
+            'hint' => '800x600'
         ]);
+
+        CRUD::field('work_hours');
 
         /**
          * Fields can be defined using the fluent syntax:

@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\TestimonialsRequest;
+use App\Http\Requests\ContactRequestsRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class TestimonialsCrudController
+ * Class ContactRequestsCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class TestimonialsCrudController extends CrudController
+class ContactRequestsCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
+//    use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
+//    use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
@@ -26,9 +26,9 @@ class TestimonialsCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Testimonials::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/testimonials');
-        CRUD::setEntityNameStrings('testimonials', 'testimonials');
+        CRUD::setModel(\App\Models\ContactRequests::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/contact-requests');
+        CRUD::setEntityNameStrings('contact requests', 'contact requests');
     }
 
     /**
@@ -39,15 +39,7 @@ class TestimonialsCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('person_name');
-        CRUD::column('person_position');
-        CRUD::addColumn([
-            'name' => 'person_image',
-            'type' => 'image',
-            'upload' => true,
-            'crop' => true,
-        ]);
-        CRUD::column('description');
+        CRUD::setFromDb(); // set columns from db columns.
 
         /**
          * Columns can be defined using the fluent syntax:
@@ -63,18 +55,8 @@ class TestimonialsCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(TestimonialsRequest::class);
-        CRUD::field('person_name')->wrapper(['class' => 'form-group col-md-6']);
-        CRUD::field('person_position')->wrapper(['class' => 'form-group col-md-6']);
-        CRUD::addField([
-            'name' => 'person_image',
-            'type' => 'image',
-            'upload' => true,
-            'crop' => true,
-            'wrapper' => ['class' => 'form-group col-md-6'],
-            'hint' => '90x90'
-        ]);
-        CRUD::field('description')->type('textarea')->wrapper(['class' => 'form-group col-md-6']);
+        CRUD::setValidation(ContactRequestsRequest::class);
+        CRUD::setFromDb(); // set fields from db columns.
 
         /**
          * Fields can be defined using the fluent syntax:

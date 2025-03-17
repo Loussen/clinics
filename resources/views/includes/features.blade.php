@@ -18,7 +18,7 @@
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
                         <i class="{{ $featuresItem['icon'] }} flex-shrink-0"></i>
                         <div>
-                            <h4><a href="" class="stretched-link">{{ $featuresItem['title'] }}</a></h4>
+                            <h4><a href="javascript:void(0);" class="stretched-link">{{ $featuresItem['title'] }}</a></h4>
                             <p>{{ $featuresItem['description'] }}</p>
                         </div>
                     </div>
