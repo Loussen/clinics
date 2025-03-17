@@ -59,7 +59,7 @@
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
 
-            <a class="cta-btn" href="#appointment">Make an Appointment</a>
+            <a class="cta-btn" href="{{ route('home',['locale' => \Illuminate\Support\Facades\App::getLocale()]) }}#appointment">Make an Appointment</a>
         </div>
     </div>
 </header>
