@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Welcome to Clinics - Your Health is Our Priority')
+
 @section('content')
     <!-- Departments Section -->
     <section id="doctors" class="doctors section light-backgroundn">
