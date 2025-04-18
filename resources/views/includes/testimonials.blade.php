@@ -42,7 +42,7 @@
                                 <span>{{ $testimonial->description }}</span>
                                 <i class="bi bi-quote quote-icon-right"></i>
                             </p>
-                            <img src="{{ asset($testimonial->person_image) }}" class="testimonial-img" alt="{{ $testimonial->person_name }}">
+                            <img src="{{ asset("storage/".$testimonial->person_image) }}" class="testimonial-img" alt="{{ $testimonial->person_name }}">
                             <h3>{{ $testimonial->person_name }}</h3>
                             <h4>{{ $testimonial->person_position }}</h4>
                         </div>

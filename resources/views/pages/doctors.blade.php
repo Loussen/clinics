@@ -15,7 +15,7 @@
                     <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                         <div class="team-member">
                             <div class="member-img">
-                                <img src="{{ asset($doctor->image) }}" class="img-fluid" alt="{{ $doctor->full_name }}">
+                                <img src="{{ asset("storage/".$doctor->image) }}" class="img-fluid" alt="{{ $doctor->full_name }}">
                                 <div class="social">
                                     @foreach($doctor->social_profiles as $socialProfile)
                                         <a href="{{ $socialProfile['link'] }}"><i class="bi bi-{{ $socialProfile['social_network'] }}"></i></a>

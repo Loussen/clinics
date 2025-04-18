@@ -17,7 +17,7 @@
                     <div class="col-lg-4 col-md-12 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                         <div class="team-member">
                             <div class="member-img">
-                                <img src="{{ asset($hospital->image) }}" class="img-fluid" alt="{{ $hospital->name }}">
+                                <img src="{{ asset("storage/".$hospital->image) }}" class="img-fluid" alt="{{ $hospital->name }}">
                             </div>
                             <div class="member-info">
                                 <h4>{{ $hospital->name }}</h4>

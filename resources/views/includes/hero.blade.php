@@ -3,7 +3,7 @@
     <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
         @foreach($sliders as $slider)
             <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                <img src="{{ asset($slider->image) }}" alt="{{ $slider->title }}">
+                <img src="{{ asset("storage/".$slider->image) }}" alt="{{ $slider->title }}">
                 <div class="container">
                     <h2>{{ $slider->title }}</h2>
                     <p>{{ $slider->description }}</p>

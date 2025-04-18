@@ -10,7 +10,7 @@
         <div class="container">
             <div class="row justify-content-around gy-4">
                 <div class="features-image col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <img src="{{ asset($doctor->image) }}" class="img-thumbnail" alt="{{ $doctor->full_name }}">
+                    <img src="{{ asset("storage/".$doctor->image) }}" class="img-thumbnail" alt="{{ $doctor->full_name }}">
                 </div>
 
                 <div class="col-lg-8 d-flex flex-column" data-aos="fade-up" data-aos-delay="200">

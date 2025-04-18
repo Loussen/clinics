@@ -29,7 +29,7 @@
                                     <p class="fst-italic">{!! $department->description !!}</p>
                                 </div>
                                 <div class="col-lg-4 text-center order-1 order-lg-2">
-                                    <img src="{{ asset($department->image) }}" alt="{{ $department->name }}" class="img-fluid">
+                                    <img src="{{ asset("storage/".$department->image) }}" alt="{{ $department->name }}" class="img-fluid">
                                 </div>
                             </div>
                         </div>
