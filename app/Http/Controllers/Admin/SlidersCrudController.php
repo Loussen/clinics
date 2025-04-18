@@ -48,6 +48,7 @@ class SlidersCrudController extends CrudController
             'type' => 'image',
             'upload' => true,
             'crop' => true,
+            'prefix' => 'storage/',
             'wrapper' => ['class' => 'form-group col-md-6'],
         ]);
 
