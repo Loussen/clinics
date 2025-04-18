@@ -69,6 +69,7 @@ class TestimonialsCrudController extends CrudController
         CRUD::addField([
             'name' => 'person_image',
             'type' => 'image',
+            'prefix' => 'storage/',
             'upload' => true,
             'crop' => true,
             'wrapper' => ['class' => 'form-group col-md-6'],

@@ -52,6 +52,7 @@ class DoctorsCrudController extends CrudController
             'name' => 'image',
             'type' => 'image',
             'upload' => true,
+            'prefix' => 'storage/',
             'crop' => true,
             'wrapper' => ['class' => 'form-group col-md-6'],
         ]);
