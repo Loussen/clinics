@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row justify-content-around gy-4">
             <div class="features-image col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                <img src="{{ asset("storage/".$features->image) }}" alt="{{ $features->title }}">
+                <img src="{{ asset($features->image) }}" alt="{{ $features->title }}">
             </div>
 
             <div class="col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
