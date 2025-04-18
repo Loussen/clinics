@@ -39,7 +39,8 @@ class FaqsCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // set columns from db columns.
+        CRUD::column('question');
+        CRUD::column('answer');
 
         /**
          * Columns can be defined using the fluent syntax:
