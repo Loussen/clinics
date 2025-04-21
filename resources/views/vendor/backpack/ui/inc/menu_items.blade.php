@@ -18,3 +18,5 @@
 </x-backpack::menu-dropdown>
 
 <x-backpack::menu-item title="Contact requests" icon="la la-list-ul" :link="backpack_url('contact-requests')" />
+
+<x-backpack::menu-item title="Sub services" icon="la la-question" :link="backpack_url('sub-services')" />
