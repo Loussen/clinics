@@ -13,7 +13,7 @@
     <div class="branding d-flex align-items-center">
         <div class="container position-relative d-flex align-items-center justify-content-end">
             <a href="{{ route('home',['locale' => \Illuminate\Support\Facades\App::getLocale()]) }}" class="logo d-flex align-items-center me-auto">
-                <img src="{{ asset('assets/img/logo.png') }}" alt="">
+                <img src="{{ asset('assets/img/logo_new.png') }}" alt="">
                 <!-- Uncomment the line below if you also wish to use a text logo -->
                 <!-- <h1 class="sitename">Medicio</h1>  -->
             </a>
