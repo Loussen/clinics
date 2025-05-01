@@ -76,7 +76,7 @@ class MainController extends Controller
 
     public function doctors()
     {
-        $doctors = Doctors::paginate(6);
+        $doctors = Doctors::paginate(8);
         return view('pages.doctors', compact('doctors'));
     }
 
@@ -88,7 +88,9 @@ class MainController extends Controller
             abort(404);
         }
 
-        return view('pages.hospital', compact('hospital'));
+        $hospitalDoctors = Doctors::where('hospital_id',$hospital->id)->get();
+
+        return view('pages.hospital', compact('hospital','hospitalDoctors'));
     }
 
     public function department($locale = null, $id)

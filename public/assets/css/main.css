@@ -255,14 +255,15 @@ h6 {
 
 .header .logo img {
   max-height: 70px;
-  margin-right: 8px;
+  margin-right: 5px;
 }
 
 .header .logo h1 {
-  font-size: 30px;
+  font-size: 25px;
   margin: 0;
   font-weight: 700;
-  color: var(--heading-color);
+  color: var(--accent-color);
+    letter-spacing: 2px;
 }
 
 .header .cta-btn,
