@@ -25,7 +25,7 @@
                             <div class="member-info">
                                 <h4>{{ $doctor->full_name }}</h4>
                                 <span class="mb-3">{{ $doctor->speciality }}</span>
-                                <span class="mb-3" style="color: var(--accent-color); font-size: 15px;">{{ $doctor->hospital->name }}</span>
+                                <span class="mb-3" style="color: var(--accent-color); font-size: 15px;">{{ $doctor->hospital->name ?? '' }}</span>
                                 <a href="{{ route('doctor', ['id' => $doctor->id, 'locale' => \Illuminate\Support\Facades\App::getLocale()]) }}" class="readmore">Learn more <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>

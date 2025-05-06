@@ -41,6 +41,13 @@ class DepartmentsCrudController extends CrudController
     {
         CRUD::column('name');
         CRUD::addColumn([
+            'name'        => 'hospital',
+            'type'        => 'select2',
+            'allows_null' => true,
+            'attribute'   => 'name',
+            'wrapper'     => ['class' => 'form-group col-md-6']
+        ]);
+        CRUD::addColumn([
             'name' => 'image',
             'type' => 'image',
             'upload' => true,
@@ -72,6 +79,13 @@ class DepartmentsCrudController extends CrudController
             'crop' => true,
             'wrapper' => ['class' => 'form-group col-md-6'],
             'hint' => '300x260'
+        ]);
+        CRUD::addField([
+            'name'        => 'hospital',
+            'type'        => 'select2',
+            'allows_null' => true,
+            'attribute'   => 'name',
+            'wrapper'     => ['class' => 'form-group col-md-6']
         ]);
         CRUD::field('description')->type('tinymce');
 

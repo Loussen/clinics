@@ -6,6 +6,7 @@ use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Backpack\CRUD\app\Models\Traits\SpatieTranslatable\HasTranslations;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -45,6 +46,11 @@ class Departments extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
+
+    public function hospital(): BelongsTo
+    {
+        return $this->belongsTo('App\Models\Hospitals', 'hospital_id');
+    }
 
     /*
     |--------------------------------------------------------------------------

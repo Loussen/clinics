@@ -34,7 +34,7 @@ class MainController extends Controller
         $services = Services::all();
         $departments = Departments::all();
         $testimonials = Testimonials::all();
-        $doctors = Doctors::all();
+        $doctors = Doctors::limit(8)->get();
         $faqs = Faqs::all();
         $hospitals = Hospitals::all();
 
@@ -127,7 +127,7 @@ class MainController extends Controller
             abort(404);
         }
 
-        $otherDoctors = Doctors::where('id','!=',$id)->get();
+        $otherDoctors = Doctors::where('id','!=',$id)->where('hospital_id',$doctor->hospital_id)->get();
 
         return view('pages.doctor', compact('doctor','otherDoctors'));
     }
