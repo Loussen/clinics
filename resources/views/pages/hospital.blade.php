@@ -19,8 +19,13 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery section">
+    @php
+        $gallery = json_decode($hospital->gallery, true) ?? [];
+    @endphp
+
+    @if($gallery)
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery section">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
@@ -62,14 +67,15 @@
                     }
                 </script>
                 <div class="swiper-wrapper align-items-center">
-                    @php
-                        $gallery = json_decode($hospital->gallery,true);
-                    @endphp
+
                     @foreach($gallery as $galleryItem)
                         <div class="swiper-slide">
                             <a class="glightbox" data-gallery="images-gallery" href="{{ Storage::disk('hospitals_gallery')->url($galleryItem) }}">
-                                <img src="{{ Storage::disk('hospitals_gallery')->url($galleryItem) }}" class="img-fluid" alt=""></a></div>
+                                <img src="{{ Storage::disk('hospitals_gallery')->url($galleryItem) }}" class="img-fluid" alt="">
+                            </a>
+                        </div>
                     @endforeach
+
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -77,6 +83,7 @@
         </div>
 
     </section><!-- /Gallery Section -->
+    @endif
 
     @include('includes.doctors',['doctors' => $hospitalDoctors])
 @endsection
