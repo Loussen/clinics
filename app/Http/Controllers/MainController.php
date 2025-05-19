@@ -13,6 +13,7 @@ use App\Models\Services;
 use App\Models\Settings;
 use App\Models\Sliders;
 use App\Models\Testimonials;
+use App\Models\VideoGallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
@@ -174,5 +175,11 @@ class MainController extends Controller
                 'message' => 'An error occurred while sending your message.'
             ], 500);
         }
+    }
+
+    public function videoGallery()
+    {
+        $videos = VideoGallery::paginate(8);
+        return view('pages.videos', compact('videos'));
     }
 }

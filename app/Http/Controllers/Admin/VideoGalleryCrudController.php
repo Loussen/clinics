@@ -44,7 +44,7 @@ class VideoGalleryCrudController extends CrudController
             $videoId = youtube_embed($entry->video_url);
 
             if ($videoId) {
-                return '<iframe width="200" height="113" src="https://www.youtube.com/embed/' . e($videoId) . '" frameborder="0" allowfullscreen></iframe>';
+                return '<iframe width="400" height="200" src="https://www.youtube.com/embed/' . e($videoId) . '" frameborder="0" allowfullscreen></iframe>';
             }
 
             return '<span class="text-danger">Invalid URL</span>';
@@ -83,5 +83,10 @@ class VideoGalleryCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
+    }
+
+    protected function autoSetupShowOperation()
+    {
+        $this->setupListOperation();
     }
 }
