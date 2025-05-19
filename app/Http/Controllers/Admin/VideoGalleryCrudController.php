@@ -21,7 +21,7 @@ class VideoGalleryCrudController extends CrudController
 
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
-     * 
+     *
      * @return void
      */
     public function setup()
@@ -33,13 +33,22 @@ class VideoGalleryCrudController extends CrudController
 
     /**
      * Define what happens when the List operation is loaded.
-     * 
+     *
      * @see  https://backpackforlaravel.com/docs/crud-operation-list-entries
      * @return void
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // set columns from db columns.
+        CRUD::column('title');
+        CRUD::column('video_url')->label('Video')->type('closure')->function(function($entry) {
+            $videoId = youtube_embed($entry->video_url);
+
+            if ($videoId) {
+                return '<iframe width="200" height="113" src="https://www.youtube.com/embed/' . e($videoId) . '" frameborder="0" allowfullscreen></iframe>';
+            }
+
+            return '<span class="text-danger">Invalid URL</span>';
+        })->escaped(false);
 
         /**
          * Columns can be defined using the fluent syntax:
@@ -49,15 +58,16 @@ class VideoGalleryCrudController extends CrudController
 
     /**
      * Define what happens when the Create operation is loaded.
-     * 
+     *
      * @see https://backpackforlaravel.com/docs/crud-operation-create
      * @return void
      */
     protected function setupCreateOperation()
     {
         CRUD::setValidation(VideoGalleryRequest::class);
-        CRUD::setFromDb(); // set fields from db columns.
 
+        CRUD::field('title');
+        CRUD::field('video_url');
         /**
          * Fields can be defined using the fluent syntax:
          * - CRUD::field('price')->type('number');
@@ -66,7 +76,7 @@ class VideoGalleryCrudController extends CrudController
 
     /**
      * Define what happens when the Update operation is loaded.
-     * 
+     *
      * @see https://backpackforlaravel.com/docs/crud-operation-update
      * @return void
      */

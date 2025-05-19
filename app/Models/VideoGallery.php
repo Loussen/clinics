@@ -19,7 +19,7 @@ class VideoGallery extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'video_galleries';
+    protected $table = 'videogallery';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
