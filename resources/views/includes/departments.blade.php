@@ -1,12 +1,12 @@
 <!-- Departments Section -->
 <section id="tabs" class="tabs section">
     <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
+    <div class="container section-title">
         <h2>Departments</h2>
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
     </div>
 
-    <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="container">
         <div class="row">
             <div class="col-lg-3">
                 <ul class="nav nav-tabs flex-column">

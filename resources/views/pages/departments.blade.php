@@ -4,7 +4,7 @@
     <!-- Departments Section -->
     <section id="doctors" class="doctors section light-backgroundn">
         <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
+        <div class="container section-title">
             <h2>Departments</h2>
             <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
         </div>
@@ -12,7 +12,7 @@
         <div class="container">
             <div class="row gy-4">
                 @foreach($departments as $department)
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                         <div class="team-member">
                             <div class="member-img">
                                 <img src="{{ asset("storage/".$department->image) }}" class="img-fluid" alt="{{ $department->name }}">

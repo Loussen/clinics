@@ -15,7 +15,7 @@
             <a href="{{ route('home',['locale' => \Illuminate\Support\Facades\App::getLocale()]) }}" class="logo d-flex align-items-center me-auto">
                 <img src="{{ asset('assets/img/logo_new.png') }}" alt="Timmed">
                 <!-- Uncomment the line below if you also wish to use a text logo -->
-                <h1 class="sitename">Timmed</h1>
+{{--                <h1 class="sitename">Timmed</h1>--}}
             </a>
 
             <nav id="navmenu" class="navmenu">

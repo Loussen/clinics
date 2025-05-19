@@ -87,5 +87,5 @@
 
     @include('includes.doctors',['doctors' => $hospitalDoctors])
 
-    @include('includes.departments',['departments' => $hospitalDepratments])
+    @include('includes.departments',['departments' => $hospitalDepartments])
 @endsection
