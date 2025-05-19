@@ -13,6 +13,7 @@
     <x-backpack::menu-dropdown-item title="Faqs" icon="la la-question-circle" :link="backpack_url('faqs')" />
     <x-backpack::menu-dropdown-item title="Testimonials" icon="la la-user-circle" :link="backpack_url('testimonials')" />
     <x-backpack::menu-dropdown-item title="Sliders" icon="la la-images" :link="backpack_url('sliders')" />
+    <x-backpack::menu-dropdown-item title="Sliders" icon="la la-video" :link="backpack_url('video-gallery')" />
     <x-backpack::menu-dropdown-item title="Features" icon="la la-list-ul" :link="backpack_url('features/1/edit')" />
     <x-backpack::menu-dropdown-item title="Translation Manager" icon="la la-stream" :link="backpack_url('translation-manager')" />
 </x-backpack::menu-dropdown>
@@ -20,3 +21,4 @@
 <x-backpack::menu-item title="Contact requests" icon="la la-list-ul" :link="backpack_url('contact-requests')" />
 
 <x-backpack::menu-item title="Sub services" icon="la la-question" :link="backpack_url('sub-services')" />
+<x-backpack::menu-item title="Video galleries" icon="la la-question" :link="backpack_url('video-gallery')" />
