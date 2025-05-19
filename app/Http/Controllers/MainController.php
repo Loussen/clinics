@@ -90,8 +90,9 @@ class MainController extends Controller
         }
 
         $hospitalDoctors = Doctors::where('hospital_id',$hospital->id)->get();
+        $hospitalDepartments = Departments::where('hospital_id',$hospital->id)->get();
 
-        return view('pages.hospital', compact('hospital','hospitalDoctors'));
+        return view('pages.hospital', compact('hospital','hospitalDoctors','hospitalDepartments'));
     }
 
     public function department($locale = null, $id)

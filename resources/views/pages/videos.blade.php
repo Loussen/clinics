@@ -16,7 +16,7 @@
                         <div class="team-member">
                             <div class="member-img">
                                 @php
-                                    $videoId = youtube_embed($video->url); // funksiyanı istifadə et
+                                    $videoId = youtube_embed($video->video_url); // funksiyanı istifadə et
                                 @endphp
 
                                 @if($videoId)

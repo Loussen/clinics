@@ -86,4 +86,6 @@
     @endif
 
     @include('includes.doctors',['doctors' => $hospitalDoctors])
+
+    @include('includes.departments',['departments' => $hospitalDepratments])
 @endsection
