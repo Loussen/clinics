@@ -71,7 +71,7 @@ class MainController extends Controller
 
     public function departments()
     {
-        $departments = Departments::paginate(6);
+        $departments = Departments::paginate(8);
         return view('pages.departments', compact('departments'));
     }
 
