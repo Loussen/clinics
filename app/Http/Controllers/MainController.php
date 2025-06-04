@@ -189,4 +189,17 @@ class MainController extends Controller
         $blogs = Page::where('template','page')->paginate(8);
         return view('pages.blogs', compact('blogs'));
     }
+
+    public function blog($locale = null, $id)
+    {
+        $blog = Page::find($id);
+
+        if(!$blog) {
+            abort(404);
+        }
+
+        $otherBlogs = Page::where('id','!=',$id)->get();
+
+        return view('pages.department', compact('blog','otherBlogs'));
+    }
 }
