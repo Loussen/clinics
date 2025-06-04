@@ -200,6 +200,6 @@ class MainController extends Controller
 
         $otherBlogs = Page::where('id','!=',$id)->get();
 
-        return view('pages.department', compact('blog','otherBlogs'));
+        return view('pages.blog', compact('blog','otherBlogs'));
     }
 }
