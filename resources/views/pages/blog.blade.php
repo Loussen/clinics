@@ -13,11 +13,13 @@
                 </div>
 
                 <div class="col-lg-8 d-flex flex-column" data-aos="fade-up" data-aos-delay="200">
-                    <p>{!! $blog->description !!}</p>
+                    <p>{!! $blog->content !!}</p>
                 </div>
             </div>
         </div>
     </section>
 
-    @include('includes.blogs',['blogs' => $otherBlogs])
+    @if($otherBlogs)
+        @include('includes.blogs',['blogs' => $otherBlogs])
+    @endif
 @endsection

@@ -26,7 +26,7 @@
                             <div class="row">
                                 <div class="col-lg-8 details order-2 order-lg-1">
                                     <h3>{{ $blog->title }}</h3>
-                                    <p class="fst-italic">{!! $blog->description !!}</p>
+                                    <p class="fst-italic">{!! $blog->content !!}</p>
                                 </div>
                                 <div class="col-lg-4 text-center order-1 order-lg-2">
                                     <img src="{{ asset("storage/".$blog->image) }}" alt="{{ $blog->title }}" class="img-fluid">
