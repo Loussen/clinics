@@ -30,6 +30,7 @@ function getRegistrar(): void
         Route::get('/service/{id}', 'service')->name('service');
         Route::get('/department/{id}', 'department')->name('department');
         Route::get('/doctor/{id}', 'doctor')->name('doctor');
+        Route::get('/blog/{id}', 'blog')->name('blog');
 
         Route::get('/page/{slug?}', 'page')->name('page');
     });
