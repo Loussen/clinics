@@ -5,9 +5,9 @@
             <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
                 <img src="{{ asset("storage/".$slider->image) }}" alt="{{ $slider->title }}">
                 <div class="container">
-                    <h2>{{ $slider->title }}</h2>
-                    <p>{{ $slider->description }}</p>
-                    <a href="{{ $slider->url }}" class="btn-get-started">Read More</a>
+{{--                    <h2>{{ $slider->title }}</h2>--}}
+{{--                    <p>{{ $slider->description }}</p>--}}
+                    <a href="{{ $slider->url }}" class="btn-get-started">Daha ətraflı</a>
                 </div>
             </div>
         @endforeach

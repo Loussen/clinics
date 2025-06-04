@@ -24,6 +24,7 @@ function getRegistrar(): void
         Route::get('/doctors', 'doctors')->name('doctors');
         Route::get('/contact', 'contact')->name('contact');
         Route::get('/video-gallery', 'videoGallery')->name('video-gallery');
+        Route::get('/blogs', 'blogs')->name('blogs');
 
         Route::get('/hospital/{id}', 'hospital')->name('hospital');
         Route::get('/service/{id}', 'service')->name('service');

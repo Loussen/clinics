@@ -183,4 +183,10 @@ class MainController extends Controller
         $videos = VideoGallery::paginate(8);
         return view('pages.videos', compact('videos'));
     }
+
+    public function blogs()
+    {
+        $blogs = Page::where('template','page')->paginate(8);
+        return view('pages.blogs', compact('blogs'));
+    }
 }
