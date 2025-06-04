@@ -198,7 +198,7 @@ class MainController extends Controller
             abort(404);
         }
 
-        $otherBlogs = Page::where('id','!=',$id)->get();
+        $otherBlogs = Page::where('template','page')->where('id','!=',$id)->get();
 
         return view('pages.blog', compact('blog','otherBlogs'));
     }
