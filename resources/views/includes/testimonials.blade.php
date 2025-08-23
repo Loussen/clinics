@@ -2,8 +2,8 @@
 <section id="testimonials" class="testimonials section">
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
-        <h2>Testimonials</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>{{ __('messages.testimonials') }}</h2>
+        <p>{{ __('messages.testimonials_description') }}</p>
     </div>
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">

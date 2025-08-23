@@ -5,8 +5,8 @@
     <section id="doctors" class="doctors section light-background">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2>Doctors</h2>
-            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            <h2>{{ __('messages.doctors') }}</h2>
+            <p>{{ __('messages.doctors_description') }}</p>
         </div>
 
         <div class="container">
@@ -26,7 +26,7 @@
                                 <h4>{{ $doctor->full_name }}</h4>
                                 <span class="mb-3">{{ $doctor->speciality }}</span>
                                 <span class="mb-3" style="color: var(--accent-color); font-size: 15px;">{{ $doctor->hospital->name ?? '' }}</span>
-                                <a href="{{ route('doctor', ['id' => $doctor->id, 'locale' => \Illuminate\Support\Facades\App::getLocale()]) }}" class="readmore">Learn more <i class="bi bi-arrow-right"></i></a>
+                                <a href="{{ route('doctor', ['id' => $doctor->id, 'locale' => \Illuminate\Support\Facades\App::getLocale()]) }}" class="readmore">{{ __('messages.learn_more') }} <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>

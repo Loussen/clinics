@@ -5,8 +5,8 @@
     <section id="doctors" class="doctors section light-backgroundn">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2>Video gallery</h2>
-            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            <h2>{{ __('messages.video_gallery') }}</h2>
+            <p>{{ __('messages.video_gallery_description') }}</p>
         </div>
 
         <div class="container">

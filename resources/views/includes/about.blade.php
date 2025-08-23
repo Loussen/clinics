@@ -1,8 +1,8 @@
 <!-- About Section -->
 <section id="about" class="about section">
     <div class="container section-title" data-aos="fade-up">
-        <h2>About Us</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>{{ __('messages.about_us') }}</h2>
+        <p>{{ __('messages.about_us_description') }}</p>
     </div>
 
     <div class="container">

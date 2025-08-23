@@ -19,7 +19,7 @@
         </div>
     </section>
 
-    @if($otherBlogs)
+    @if($otherBlogs->isNotEmpty())
         @include('includes.blogs',['blogs' => $otherBlogs])
     @endif
 @endsection

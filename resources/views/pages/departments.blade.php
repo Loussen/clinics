@@ -5,8 +5,8 @@
     <section id="doctors" class="doctors section light-backgroundn">
         <!-- Section Title -->
         <div class="container section-title">
-            <h2>Departments</h2>
-            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            <h2>{{ __('messages.departments') }}</h2>
+            <p>{{ __('messages.departments_description') }}</p>
         </div>
 
         <div class="container">
@@ -20,7 +20,7 @@
                             <div class="member-info">
                                 <h4>{{ $department->name }}</h4>
                                 <span>{{ $department->speciality }}</span>
-                                <a href="{{ route('department', ['id' => $department->id, 'locale' => \Illuminate\Support\Facades\App::getLocale()]) }}" class="readmore">Learn more <i class="bi bi-arrow-right"></i></a>
+                                <a href="{{ route('department', ['id' => $department->id, 'locale' => \Illuminate\Support\Facades\App::getLocale()]) }}" class="readmore">{{ __('messages.learn_more') }} <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>

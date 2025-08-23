@@ -2,8 +2,8 @@
 <section id="doctors" class="doctors section light-backgroundn">
 <!-- Section Title -->
 <div class="container section-title" data-aos="fade-up">
-    <h2>Hospitals</h2>
-    <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+    <h2>{{ __('messages.clinics') }}</h2>
+    <p>{{ __('messages.clinics_description') }}</p>
 </div>
 
 <div class="container">
@@ -16,7 +16,7 @@
                     </div>
                     <div class="member-info">
                         <h4>{{ $hospital->name }}</h4>
-                        <a href="{{ route('hospital', ['id' => $hospital->id, 'locale' => \Illuminate\Support\Facades\App::getLocale()]) }}" class="readmore">Learn more <i class="bi bi-arrow-right"></i></a>
+                        <a href="{{ route('hospital', ['id' => $hospital->id, 'locale' => \Illuminate\Support\Facades\App::getLocale()]) }}" class="readmore">{{ __('messages.learn_more') }} <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -27,7 +27,7 @@
     <div class="row mt-5">
         <div class="col-12">
             <nav class="d-flex justify-content-center">
-                <a href="{{ route('hospitals',['locale' => \Illuminate\Support\Facades\App::getLocale()]) }}" class="btn btn-outline-info">More hospital</a>
+                <a href="{{ route('hospitals',['locale' => \Illuminate\Support\Facades\App::getLocale()]) }}" class="btn btn-outline-info">{{ __('messages.clinics_all') }}</a>
             </nav>
         </div>
     </div>

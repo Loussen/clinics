@@ -2,8 +2,8 @@
 <section id="tabs" class="tabs section">
     <!-- Section Title -->
     <div class="container section-title">
-        <h2>Departments</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>{{ __('messages.departments') }}</h2>
+        <p>{{ __('messages.departments_description') }}</p>
     </div>
 
     <div class="container">

@@ -7,7 +7,7 @@
                     <i class="fas fa-building flex-shrink-0"></i>
                     <div>
                         <span data-purecounter-start="0" data-purecounter-end="{{ \App\Models\Hospitals::count() }}" data-purecounter-duration="1" class="purecounter"></span>
-                        <p>Hospitals</p>
+                        <p>{{ __('messages.clinics') }}</p>
                     </div>
                 </div>
             </div>
@@ -17,7 +17,7 @@
                     <i class="far fa-hospital flex-shrink-0"></i>
                     <div>
                         <span data-purecounter-start="0" data-purecounter-end="{{ \App\Models\Departments::count() }}" data-purecounter-duration="1" class="purecounter"></span>
-                        <p>Departments</p>
+                        <p>{{ __('messages.departments') }}</p>
                     </div>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                     <i class="fas fa-user-md flex-shrink-0"></i>
                     <div>
                         <span data-purecounter-start="0" data-purecounter-end="{{ \App\Models\Doctors::count() }}" data-purecounter-duration="1" class="purecounter"></span>
-                        <p>Doctors</p>
+                        <p>{{ __('messages.doctors') }}</p>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                     <i class="fas fa-list-alt flex-shrink-0"></i>
                     <div>
                         <span data-purecounter-start="0" data-purecounter-end="{{ \App\Models\Services::count() }}" data-purecounter-duration="1" class="purecounter"></span>
-                        <p>Services</p>
+                        <p>{{ __('messages.services') }}</p>
                     </div>
                 </div>
             </div>

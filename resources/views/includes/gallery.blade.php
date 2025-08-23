@@ -3,8 +3,8 @@
 
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
-        <h2>Gallery</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>{{ __('messages.gallery') }}</h2>
+        <p>{{ __('messages.gallery_description') }}</p>
     </div><!-- End Section Title -->
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -47,7 +47,7 @@
                 @foreach($gallery as $galleryItem)
                     <div class="swiper-slide">
                         <a class="glightbox" data-gallery="images-gallery" href="{{ Storage::disk('site_gallery')->url($galleryItem) }}">
-                        <img src="{{ Storage::disk('site_gallery')->url($galleryItem) }}" class="img-fluid" alt=""></a></div>
+                        <img src="{{ Storage::disk('site_gallery')->url($galleryItem) }}" class="img-fluid" alt="Timmed"></a></div>
                 @endforeach
             </div>
             <div class="swiper-pagination"></div>

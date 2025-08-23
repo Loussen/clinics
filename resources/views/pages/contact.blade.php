@@ -5,8 +5,8 @@
     <section id="contact" class="contact section">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2>Contact</h2>
-            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            <h2>{{ __('messages.contact') }}</h2>
+            <p>{{ __('messages.contact_description') }}</p>
         </div>
 
         <div class="mb-5" data-aos="fade-up" data-aos-delay="200">
@@ -20,7 +20,7 @@
                         <div class="col-lg-12">
                             <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="" data-aos-delay="200">
                                 <i class="bi bi-geo-alt"></i>
-                                <h3>Address</h3>
+                                <h3>{{ __('messages.address') }}</h3>
                                 <p>{{ $siteSettings->address }}</p>
                             </div>
                         </div>
@@ -28,7 +28,7 @@
                         <div class="col-md-6">
                             <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="" data-aos-delay="300">
                                 <i class="bi bi-telephone"></i>
-                                <h3>Call Us</h3>
+                                <h3>{{ __('messages.call_us') }}</h3>
                                 <p>{{ $siteSettings->phone }}</p>
                             </div>
                         </div>
@@ -36,7 +36,7 @@
                         <div class="col-md-6">
                             <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="" data-aos-delay="400">
                                 <i class="bi bi-envelope"></i>
-                                <h3>Email Us</h3>
+                                <h3>{{ __('messages.email_us') }}</h3>
                                 <p>{{ $siteSettings->email }}</p>
                             </div>
                         </div>
@@ -47,31 +47,31 @@
                     <form id="contactForm" class="php-email-form" data-aos="" data-aos-delay="500">
                         <div class="row gy-4">
                             <div class="col-md-6">
-                                <input type="text" name="full_name" class="form-control" placeholder="Your Name" required>
+                                <input type="text" name="full_name" class="form-control" placeholder="{{ __('messages.contact_form_full_name') }}" required>
                                 <div class="invalid-feedback" data-error="full_name"></div>
                             </div>
 
                             <div class="col-md-6">
-                                <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                                <input type="email" class="form-control" name="email" placeholder="{{ __('messages.contact_form_email') }}" required>
                                 <div class="invalid-feedback" data-error="email"></div>
                             </div>
 
                             <div class="col-md-12">
-                                <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                                <input type="text" class="form-control" name="subject" placeholder="{{ __('messages.contact_form_subject') }}" required>
                                 <div class="invalid-feedback" data-error="subject"></div>
                             </div>
 
                             <div class="col-md-12">
-                                <textarea class="form-control" name="message" rows="4" placeholder="Message" required></textarea>
+                                <textarea class="form-control" name="message" rows="4" placeholder="{{ __('messages.contact_form_message') }}" required></textarea>
                                 <div class="invalid-feedback" data-error="message"></div>
                             </div>
 
                             <div class="col-md-12 text-center">
                                 <div class="loading">Loading</div>
                                 <div class="alert alert-danger error-message d-none"></div>
-                                <div class="alert alert-success sent-message">Your message has been sent. Thank you!</div>
+                                <div class="alert alert-success sent-message">{{ __('messages.contact_form_success_message') }}</div>
 
-                                <button type="submit">Send Message</button>
+                                <button type="submit">{{ __('messages.contact_form_send') }}</button>
                             </div>
                         </div>
                     </form>

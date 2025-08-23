@@ -1,8 +1,8 @@
 <!-- Services Section -->
 <section id="services" class="services section">
     <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>{{ __('messages.services') }}</h2>
+        <p>{{ __('messages.services_description') }}</p>
     </div>
 
     <div class="container">
@@ -15,7 +15,7 @@
                         </div>
                         <h3>{{ $service->name }}</h3>
                         <p>{{ $service->short_description }}</p>
-                        <a href="{{ route('service', ['id' => $service->id, 'locale' => \Illuminate\Support\Facades\App::getLocale()]) }}" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
+                        <a href="{{ route('service', ['id' => $service->id, 'locale' => \Illuminate\Support\Facades\App::getLocale()]) }}" class="readmore stretched-link">{{ __('messages.learn_more') }} <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
             @endforeach

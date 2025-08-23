@@ -3,11 +3,11 @@
     <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
         @foreach($sliders as $slider)
             <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                <img src="{{ asset("storage/".$slider->image) }}" alt="{{ $slider->title }}">
+                <img class="slider-img" src="{{ asset("storage/".$slider->image) }}" alt="{{ $slider->title }}">
                 <div class="container">
 {{--                    <h2>{{ $slider->title }}</h2>--}}
 {{--                    <p>{{ $slider->description }}</p>--}}
-                    <a href="{{ $slider->url }}" class="btn-get-started">Daha ətraflı</a>
+                    <a href="{{ $slider->url }}" class="btn-get-started">{{ __('messages.learn_more') }}</a>
                 </div>
             </div>
         @endforeach
@@ -23,3 +23,11 @@
         <ol class="carousel-indicators"></ol>
     </div>
 </section>
+
+<style>
+    @media (max-width: 768px) {
+        .slider-img {
+            object-fit: contain !important;
+        }
+    }
+</style>
