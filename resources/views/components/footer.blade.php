@@ -60,7 +60,7 @@
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>{{ __('messages.footer_departments') }}</h4>
           <ul>
-              @foreach(\App\Models\Departments::all() as $department)
+              @foreach(\App\Models\Departments::limit(10)->get() as $department)
                   <li><a href="{{ route('department',['id' => $department->id,'locale' => \Illuminate\Support\Facades\App::getLocale()]) }}">{{ $department->name }}</a></li>
               @endforeach
           </ul>
