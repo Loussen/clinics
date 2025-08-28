@@ -10,6 +10,7 @@ return [
     'footer_departments' => 'Departments',
     'footer_copyright' => 'All rights reserved',
     'header_appointment_button' => 'GET APPOINTMENT',
+    'header_call_us' => 'Call us now',
     'about_us' => 'About Us',
     'about_us_description' => 'You can learn about us here',
     'make_appointment' => 'Make an Appointment',

@@ -10,6 +10,7 @@ return [
     'footer_departments' => 'Departmanlar',
     'footer_copyright' => 'Tüm hakları saklıdır',
     'header_appointment_button' => 'RANDEVU AL',
+    'header_call_us' => 'Hemen bizi arayın',
     'about_us' => 'Hakkımızda',
     'about_us_description' => 'Hakkımızda buradan bilgi alabilirsiniz',
     'make_appointment' => 'Randevu al',

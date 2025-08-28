@@ -10,6 +10,7 @@ return [
     'footer_departments' => 'Отделения',
     'footer_copyright' => 'Все права защищены',
     'header_appointment_button' => 'ЗАПИСАТЬСЯ',
+    'header_call_us' => 'Позвоните нам сейчас',
     'about_us' => 'О нас',
     'about_us_description' => 'Здесь вы можете узнать о нас',
     'make_appointment' => 'Записаться на приём',
