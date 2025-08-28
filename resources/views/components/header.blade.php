@@ -59,7 +59,7 @@
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
 
-            <a class="cta-btn" href="{{ route('home',['locale' => \Illuminate\Support\Facades\App::getLocale()]) }}#appointment">{{ __('messages.header_appointment_button') }}</a>
+            <a class="cta-btn" style="margin-left: 12px; font-size: 12px;" href="{{ route('home',['locale' => \Illuminate\Support\Facades\App::getLocale()]) }}#appointment">{{ __('messages.header_appointment_button') }}</a>
         </div>
     </div>
 </header>
