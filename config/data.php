@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'locales' => ['az' => 'Azerbaijani','en' => 'English', 'ru' => 'Russian', 'tr' => 'Turkish', 'uz' => 'Uzbek'],
+    'locales' => ['az' => 'Azerbaijani','en' => 'English', 'ru' => 'Russian', 'tr' => 'Turkish'],
     'default_locale' => 'en',
     'meta_tags' => [
         'title' => 'INI.az - Gələcəyə kodlan.',
