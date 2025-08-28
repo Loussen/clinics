@@ -5,7 +5,7 @@
                 <i class="bi bi-clock me-1"></i> {{ $siteSettings->work_hours }}
             </div>
             <div class="d-flex align-items-center">
-                <i class="bi bi-phone me-1"></i> {{ __('messages.header_call_us') }} : {{ $siteSettings->phone }}
+                <i class="bi bi-phone me-1"></i> {{ __('messages.header_call_us') }} : <b>{{ $siteSettings->phone }}</b>
             </div>
         </div>
     </div>
